@@ -4,6 +4,7 @@ then
     echo "Usage: Param1: directory param2: write string"
     exit 1
 else
+    mkdir -p "$(dirname "$1")"
     echo $2 > $1
     if [ $? -eq 0 ]; then
         echo "success"
